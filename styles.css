@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tagesschrift&display=swap');
+
+body 
+{
+    font-family: "Tagesschrift", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url("./imagenes/fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#seleccion-pj
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto;
+    height: 100vh;          
+    padding: 5px;           
+    box-sizing: border-box;
+}
+
+
+.title
+{
+    color: moccasin;
+    font-size: 32px; 
+    margin-top: 2px;
+}
+
+.subtitulo
+{
+    color: moccasin;
+    font-size: 20px;
+    margin-top: 1px;
+}
+
+.tarjetas {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 1px;
+    justify-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px; /* Añadido un pequeño padding */
+    align-items: start;
+}
+
+.tarjetas-de-bestiario {
+    color: moccasin;
+    background: transparent;
+    padding: 10px;
+    gap: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 240px; /* Asegúrate de que no exceda este tamaño */
+    width: auto; /* Ajusta la tarjeta para que ocupe el 100% del contenedor */
+    height: auto;
+    margin: 0 auto;
+}
+
+.tarjetas-de-bestiario img 
+{
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* o el tamaño que prefieras */
+    object-fit: contain;
+    display: block;
+}
+
+
+
+.bestia
+{
+    writing-mode:vertical-rl;
+    text-orientation: upright;
+    display:flex;
+    align-content: center;
+}
+
+.boton-de-seleccion
+{
+    width: 200px;
+    height: 30px;
+    background: moccasin;
+    font-size: 15px;
+    border-radius: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-top: 2px solid grey;  /* Gris claro arriba */
+    border-left: 2px solid grey;
+    border-right: 2px solid #000; /* Borde negro */
+    border-bottom: 2px solid #000; 
+}
+
+.tarjetas-de-bestiario:hover
+{
+    cursor: pointer;
+}
+
+#seleccionar-ataque
+{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.boton-de-ataque
+{
+    background-color: moccasin;
+    border-radius: 40px;
+    box-sizing: border-box;
+    padding: 15px;
+    cursor: pointer;
+    
+}
+
+#mensajes
+{
+    width: 253px;
+    background:#a3b18a;
+    box-sizing: border-box;
+    padding: 1px;
+    margin-top: 9px;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    border-top: 2px solid grey;  /* Gris claro arriba */
+    border-left: 2px solid grey;
+    border-right: 2px solid #000; /* Borde negro */
+    border-bottom: 2px solid #000;
+}
+
+#reiniciar
+{
+    box-sizing: border-box;
+    border-top: 1px solid grey;  /* Gris claro arriba */
+    border-left: 1px solid grey;
+    border-right: 1px solid #000; /* Borde negro */
+    border-bottom: 1px solid #000; 
+    color: black;
+    cursor: pointer;
+    background: moccasin;
+    border-radius: 30px;
+
+}
+
+.ataquesFinales
+{
+    display: grid;
+    grid-template-columns: 400px 400px;
+    border-top: 2px solid  black;  /* Gris claro arriba */
+    border-left: 2px solid  black;
+    border-right: 2px solid black; /* Borde negro */
+    border-bottom: 2px solid  black; 
+    background: #a3b18a;
+    color: black;
+    width: fit-content;
+    height: fit-content;
+    margin-top:5px;
+    border-radius: 34px;
+}
+
+/* Estilo para los 2 cuadros internos */
+.ataquesFinales > div 
+{
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center
+}
+
+.ataquesFinales > div:first-child 
+{
+    border-right: 10px solid black;
+}
+
+.ataquesFinales p 
+{
+    margin: 4px 0;
+    padding-bottom: 4px;
+}
+
+.ataquesFinales p:last-child 
+{
+    border-bottom: none;
+}
+
+.elementos-de-ataque
+{
+    display: flex;
+    gap: 10;
+}
+
+input:checked + label
+{
+     background-color: gray;
+}
+
+@media (max-width: 600px) {
+    .tarjetas
+     {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+     }
+
+     .elementos-de-ataque
+     {
+        flex-direction: column;
+     }
+
+     .ataquesFinales
+
+     {
+        grid-template-columns: 1fr;
+     }
+
+     .ataquesFinales > div:first-child 
+     {
+    border-right: 0px solid black;
+     }
+}
