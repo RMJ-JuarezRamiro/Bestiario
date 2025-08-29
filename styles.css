@@ -231,4 +231,8 @@ input:checked + label
      {
     border-right: 0px solid black;
      }
+      /* 🔧 Corrección del espacio en la primera interfaz */
+    #seleccion-pj {
+        justify-content: flex-start; /* antes estaba space-between */
+    }
 }
