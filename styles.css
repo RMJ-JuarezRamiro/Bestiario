@@ -21,7 +21,8 @@ body
     justify-content: space-between;
     align-items: center;
     overflow-y: auto;
-    min-height: 100vh;          
+    height: auto;
+    min-height: auto;           
     padding: 5px;           
     box-sizing: border-box;
 }
@@ -231,8 +232,9 @@ input:checked + label
      {
     border-right: 0px solid black;
      }
-      /* 🔧 Corrección del espacio en la primera interfaz */
-    #seleccion-pj {
-        justify-content: flex-start; /* antes estaba space-between */
-    }
+      #seleccion-pj {
+    justify-content: flex-start;
+    height: auto;
+    min-height: auto;
+     }
 }
